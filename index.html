@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Portfolio của Trần Nhật Tiến - Manual và Automation Tester."
+  >
+
+  <title>Trần Nhật Tiến | QA Tester</title>
+
+  <style>
+    :root {
+      --background: #f4f7fb;
+      --surface: #ffffff;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text: #1f2937;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      min-height: calc(100vh - 68px);
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .hero-label {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1.1;
+    }
+
+    .hero h2 {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 680px;
+      margin-bottom: 32px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 1px solid var(--primary);
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      color: white;
+      background: var(--primary);
+    }
+
+    .button-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .button-outline {
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .button-outline:hover {
+      color: white;
+      background: var(--primary);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      margin: 0 0 32px;
+      font-size: 34px;
+    }
+
+    .section-title::after {
+      display: block;
+      width: 60px;
+      height: 4px;
+      margin-top: 10px;
+      border-radius: 10px;
+      background: var(--primary);
+      content: "";
+    }
+
+    .card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 28px;
+    }
+
+    .information-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .information-list strong {
+      display: inline-block;
+      min-width: 110px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 9px 14px;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      color: #1d4ed8;
+      background: #eff6ff;
+      font-weight: 600;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 24px;
+    }
+
+    .timeline-item {
+      padding-left: 24px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 4px;
+    }
+
+    .timeline-item .period {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .timeline-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+    }
+
+    .project-card p {
+      flex: 1;
+      color: var(--muted);
+    }
+
+    .project-tech {
+      margin-top: 16px;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .contact-content {
+      max-width: 720px;
+    }
+
+    .contact-content p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      background: var(--surface);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .about-grid,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">Tien Tran</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
+        <li><a href="#experience">Kinh nghiệm</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-label">
+            Xin chào, tôi là
+          </div>
+
+          <h1>Trần Nhật Tiến</h1>
+
+          <h2>Manual & Automation Tester</h2>
+
+          <p class="hero-description">
+            Tôi có hơn một năm kinh nghiệm trong lĩnh vực kiểm thử
+            phần mềm. Tôi có kinh nghiệm thiết kế test case, kiểm thử
+            giao diện, kiểm thử API và xây dựng automation framework
+            bằng Playwright và TypeScript.
+          </p>
+
+          <div class="button-group">
+            <a class="button button-primary" href="#projects">
+              Xem dự án
+            </a>
+
+            <a class="button button-outline" href="#contact">
+              Liên hệ với tôi
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">Giới thiệu</h2>
+
+        <div class="about-grid">
+          <article class="card">
+            <p>
+              Tôi là một QA Tester có kinh nghiệm ở cả Manual Testing
+              và Automation Testing.
+            </p>
+
+            <p>
+              Trong công việc, tôi tham gia phân tích yêu cầu, thiết kế
+              test case, thực thi kiểm thử, báo cáo bug và xây dựng các
+              bộ kiểm thử tự động cho ứng dụng web.
+            </p>
+
+            <p>
+              Mục tiêu của tôi là tiếp tục phát triển chuyên môn
+              Automation Testing, làm việc trong môi trường quốc tế và
+              hướng đến vị trí Test Lead trong tương lai.
+            </p>
+          </article>
+
+          <aside class="card information-list">
+            <div>
+              <strong>Họ tên:</strong>
+              Trần Nhật Tiến
+            </div>
+
+            <div>
+              <strong>Vị trí:</strong>
+              QA Tester
+            </div>
+
+            <div>
+              <strong>Khu vực:</strong>
+              TP. Hồ Chí Minh
+            </div>
+
+            <div>
+              <strong>Học vấn:</strong>
+              Đại học Sài Gòn
+            </div>
+
+            <div>
+              <strong>Kinh nghiệm:</strong>
+              Hơn 1 năm
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Kỹ năng</h2>
+
+        <div class="card skills">
+          <span class="skill">Manual Testing</span>
+          <span class="skill">Automation Testing</span>
+          <span class="skill">Playwright</span>
+          <span class="skill">TypeScript</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">API Testing</span>
+          <span class="skill">Postman</span>
+          <span class="skill">Test Case Design</span>
+          <span class="skill">Bug Reporting</span>
+          <span class="skill">Git</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">Allure Report</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Kinh nghiệm</h2>
+
+        <div class="card timeline">
+          <article class="timeline-item">
+            <h3>Manual & Automation Tester</h3>
+
+            <div class="period">
+              Hơn 1 năm kinh nghiệm
+            </div>
+
+            <p>
+              Phân tích yêu cầu, xây dựng checklist và test case,
+              kiểm thử chức năng web, kiểm thử API, báo cáo bug và
+              theo dõi quá trình sửa lỗi.
+            </p>
+
+            <p>
+              Xây dựng và duy trì automation framework bằng Playwright
+              và TypeScript theo mô hình Page Object Model.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Sinh viên Công nghệ thông tin</h3>
+
+            <div class="period">
+              Đại học Sài Gòn
+            </div>
+
+            <p>
+              Học tập và phát triển kiến thức về lập trình, kiểm thử
+              phần mềm và quy trình phát triển phần mềm.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Dự án nổi bật</h2>
+
+        <div class="projects">
+          <article class="card project-card">
+            <h3>Web Automation Framework</h3>
+
+            <p>
+              Xây dựng framework kiểm thử tự động cho ứng dụng web,
+              tổ chức code theo Page Object Model và quản lý test data,
+              fixtures, helpers cùng báo cáo kết quả.
+            </p>
+
+            <div class="project-tech">
+              Playwright · TypeScript · Allure
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>API Testing</h3>
+
+            <p>
+              Thiết kế và thực thi test case API, kiểm tra status code,
+              response schema, validation, business rule và các trường
+              hợp dữ liệu không hợp lệ.
+            </p>
+
+            <div class="project-tech">
+              Postman · REST API · JSON
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>Regression Testing</h3>
+
+            <p>
+              Quản lý và thực thi bộ regression test có số lượng lớn,
+              phân tích test thất bại, giảm flaky test và phân loại
+              nguyên nhân lỗi sản phẩm, môi trường và automation.
+            </p>
+
+            <div class="project-tech">
+              Test Design · Debugging · Reporting
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Liên hệ</h2>
+
+        <div class="card contact-content">
+          <p>
+            Tôi đang tìm kiếm cơ hội phát triển trong lĩnh vực
+            Quality Assurance và Automation Testing.
+          </p>
+
+          <div class="button-group">
+            <a
+              class="button button-primary"
+              href="mailto:trannhattien.2004tv@gmail.com"
+            >
+              Gửi email
+            </a>
+
+            <a
+              class="button button-outline"
+              href="http://linkedin.com/in/tiendoha2711"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              class="button button-outline"
+              href="https://github.com/tiendoha"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Trần Nhật Tiến. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
